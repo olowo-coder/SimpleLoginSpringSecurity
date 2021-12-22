@@ -1,6 +1,7 @@
 package com.example.loginsecurity.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.OAuth2ResourceServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -15,7 +16,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    private UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
+//    private final
+
 
     @Autowired
     public WebSecurityConfiguration(UserDetailsService userDetailsService) {
